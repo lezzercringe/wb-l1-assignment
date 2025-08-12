@@ -32,6 +32,8 @@ func main() {
 
 	ch := make(chan int, workersCount)
 	ctx, cancel := context.WithCancel(context.Background())
+	// контекст кажется удобной абстракцией, плюс при чтении сразу понятно что он отвественен за graceful shutdown.
+	// в данном случае можно было бы обойтись и простым chan struct{}
 
 	setupSignalHandler(cancel)
 
