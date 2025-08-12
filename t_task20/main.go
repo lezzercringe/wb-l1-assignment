@@ -17,7 +17,7 @@ func reverseWordsOrder(s []rune) {
 		}
 	}
 
-	slices.Reverse(s[l:len(s)])
+	slices.Reverse(s[l:])
 }
 
 func main() {
